@@ -16,15 +16,15 @@ extension MainNewsController{
         return allArticles.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! NewsCell
         let article = allArticles[indexPath.row]
-        cell.textLabel?.text = article.title
-        cell.backgroundColor = UIColor.cellBackgroundColor
-        cell.textLabel?.textColor = UIColor.white
+        cell.article = article
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
 }
 

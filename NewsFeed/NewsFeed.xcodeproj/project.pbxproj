@@ -17,6 +17,8 @@
 		020B4CE6209929DA00CF8FE8 /* NavigationController+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CE5209929DA00CF8FE8 /* NavigationController+Theme.swift */; };
 		020B4CE920992D9D00CF8FE8 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CE820992D9D00CF8FE8 /* APIHelper.swift */; };
 		020B4CEC2099311400CF8FE8 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CEB2099311400CF8FE8 /* NewsModel.swift */; };
+		020B4CEE20994A5B00CF8FE8 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CED20994A5B00CF8FE8 /* NewsCell.swift */; };
+		020B4CF020994E4A00CF8FE8 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CEF20994E4A00CF8FE8 /* UIImageView+DownloadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		020B4CE5209929DA00CF8FE8 /* NavigationController+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Theme.swift"; sourceTree = "<group>"; };
 		020B4CE820992D9D00CF8FE8 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		020B4CEB2099311400CF8FE8 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		020B4CED20994A5B00CF8FE8 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		020B4CEF20994E4A00CF8FE8 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			children = (
 				020B4CCF209923BD00CF8FE8 /* MainNewsController.swift */,
 				020B4CE0209926DD00CF8FE8 /* MainNewsController+TableView.swift */,
+				020B4CED20994A5B00CF8FE8 /* NewsCell.swift */,
 			);
 			path = MainNewTableViewController;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			children = (
 				020B4CE32099295E00CF8FE8 /* UIColor+Theme.swift */,
 				020B4CE5209929DA00CF8FE8 /* NavigationController+Theme.swift */,
+				020B4CEF20994E4A00CF8FE8 /* UIImageView+DownloadImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,7 +193,9 @@
 				020B4CE6209929DA00CF8FE8 /* NavigationController+Theme.swift in Sources */,
 				020B4CD0209923BD00CF8FE8 /* MainNewsController.swift in Sources */,
 				020B4CE42099295E00CF8FE8 /* UIColor+Theme.swift in Sources */,
+				020B4CF020994E4A00CF8FE8 /* UIImageView+DownloadImage.swift in Sources */,
 				020B4CE1209926DD00CF8FE8 /* MainNewsController+TableView.swift in Sources */,
+				020B4CEE20994A5B00CF8FE8 /* NewsCell.swift in Sources */,
 				020B4CCE209923BD00CF8FE8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ class MainNewsController: UITableViewController {
     }
     
     private func setUpTableView(){
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(NewsCell.self, forCellReuseIdentifier: cellId)
         tableView.separatorColor = UIColor.white
         tableView.backgroundColor = UIColor.darkBlue
         tableView.tableFooterView = UIView()
