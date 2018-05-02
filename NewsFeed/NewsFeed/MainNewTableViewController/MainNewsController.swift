@@ -17,9 +17,28 @@ class MainNewsController: UITableViewController {
         navigationItem.title = "Today's News"
         setUpTableView()
         getBreakingNewsAndShowOnTableView()
+        addRefreshControl()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    
+    private func addRefreshControl(){
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(downloadCompaniesFromServer), for: .valueChanged)
+        refreshControl.tintColor = .white
+        self.refreshControl = refreshControl
+    }
+    
+    @objc private func downloadCompaniesFromServer(){
+        APIHelper.shared.getTodaysBreakingNews { (articles) in
+            if let all = articles{
+                self.allArticles = all
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+            }
+        }
     }
     
     private func setUpTableView(){
