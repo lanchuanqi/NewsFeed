@@ -15,6 +15,8 @@
 		020B4CE1209926DD00CF8FE8 /* MainNewsController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CE0209926DD00CF8FE8 /* MainNewsController+TableView.swift */; };
 		020B4CE42099295E00CF8FE8 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CE32099295E00CF8FE8 /* UIColor+Theme.swift */; };
 		020B4CE6209929DA00CF8FE8 /* NavigationController+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CE5209929DA00CF8FE8 /* NavigationController+Theme.swift */; };
+		020B4CE920992D9D00CF8FE8 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CE820992D9D00CF8FE8 /* APIHelper.swift */; };
+		020B4CEC2099311400CF8FE8 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B4CEB2099311400CF8FE8 /* NewsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		020B4CE0209926DD00CF8FE8 /* MainNewsController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainNewsController+TableView.swift"; sourceTree = "<group>"; };
 		020B4CE32099295E00CF8FE8 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		020B4CE5209929DA00CF8FE8 /* NavigationController+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Theme.swift"; sourceTree = "<group>"; };
+		020B4CE820992D9D00CF8FE8 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		020B4CEB2099311400CF8FE8 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		020B4CCC209923BD00CF8FE8 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				020B4CEA209930FF00CF8FE8 /* Model */,
+				020B4CE720992D8B00CF8FE8 /* APIHelper */,
 				020B4CE22099294800CF8FE8 /* Extensions */,
 				020B4CDF2099264F00CF8FE8 /* MainNewTableViewController */,
 				020B4CCD209923BD00CF8FE8 /* AppDelegate.swift */,
@@ -87,6 +93,22 @@
 				020B4CE5209929DA00CF8FE8 /* NavigationController+Theme.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		020B4CE720992D8B00CF8FE8 /* APIHelper */ = {
+			isa = PBXGroup;
+			children = (
+				020B4CE820992D9D00CF8FE8 /* APIHelper.swift */,
+			);
+			path = APIHelper;
+			sourceTree = "<group>";
+		};
+		020B4CEA209930FF00CF8FE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				020B4CEB2099311400CF8FE8 /* NewsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +182,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020B4CEC2099311400CF8FE8 /* NewsModel.swift in Sources */,
+				020B4CE920992D9D00CF8FE8 /* APIHelper.swift in Sources */,
 				020B4CE6209929DA00CF8FE8 /* NavigationController+Theme.swift in Sources */,
 				020B4CD0209923BD00CF8FE8 /* MainNewsController.swift in Sources */,
 				020B4CE42099295E00CF8FE8 /* UIColor+Theme.swift in Sources */,

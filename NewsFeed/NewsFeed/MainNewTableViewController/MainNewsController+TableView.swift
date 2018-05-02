@@ -13,12 +13,14 @@ extension MainNewsController{
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return allArticles.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as UITableViewCell
-        cell.textLabel?.text = "news today"
-        cell.backgroundColor = UIColor.lightBlue
+        let article = allArticles[indexPath.row]
+        cell.textLabel?.text = article.title
+        cell.backgroundColor = UIColor.cellBackgroundColor
+        cell.textLabel?.textColor = UIColor.white
         return cell
     }
     

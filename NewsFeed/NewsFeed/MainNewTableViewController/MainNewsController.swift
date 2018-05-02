@@ -10,10 +10,16 @@ import UIKit
 
 class MainNewsController: UITableViewController {
     let cellId = "tableCellId"
+    var allArticles = [Article]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Today's News"
         setUpTableView()
+        getBreakingNewsAndShowOnTableView()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     private func setUpTableView(){
@@ -23,6 +29,21 @@ class MainNewsController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
 
+    private func getBreakingNewsAndShowOnTableView(){
+        APIHelper.shared.getTodaysBreakingNews { (articles) in
+            if let all = articles{
+                self.allArticles = all
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    
 
 }
 
