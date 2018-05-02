@@ -9,7 +9,7 @@
 import UIKit
 
 
-class APIHelper{
+struct APIHelper{
     static let shared = APIHelper()
     
     func getTodaysBreakingNews(completion: @escaping([Article]?) -> ()){

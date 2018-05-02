@@ -25,6 +25,11 @@ extension MainNewsController{
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newsDetailVC = NewsDetailViewController()
+        newsDetailVC.article = allArticles[indexPath.row]
+        self.navigationController?.pushViewController(newsDetailVC, animated: true)
+    }
     
 }
 

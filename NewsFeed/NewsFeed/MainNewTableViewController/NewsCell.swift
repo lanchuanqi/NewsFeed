@@ -14,6 +14,7 @@ class NewsCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "unknown")
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 10
         imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor.darkBlue.cgColor
@@ -29,13 +30,13 @@ class NewsCell: UITableViewCell {
         label.numberOfLines = 3
         return label
     }()
-    let authorLabel: UILabel = {
+    let sourceLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "by: unknown"
-        label.textAlignment = .left
+        label.text = "Source Unknown"
+        label.textAlignment = .right
         label.textColor = UIColor.white
-        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .thin)
         return label
     }()
     let dateLabel: UILabel = {
@@ -44,13 +45,20 @@ class NewsCell: UITableViewCell {
         label.text = "2018/05/01"
         label.textAlignment = .right
         label.textColor = UIColor.white
-        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .thin)
         return label
     }()
     
     var article: Article? {
         didSet{
             titleLabel.text = article?.title
+            if let source = article?.source?.name{
+                sourceLabel.text = "From: \(source)"
+            }
+            dateLabel.text = article?.publishedAt
+            if let imageURL = article?.urlToImage{
+                newsImageView.downLoadAndCacheImageFromURL(urlString: imageURL)
+            }
         }
     }
     
@@ -74,17 +82,17 @@ class NewsCell: UITableViewCell {
         titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
-        addSubview(authorLabel)
-        authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
-        authorLabel.leftAnchor.constraint(equalTo: newsImageView.rightAnchor, constant: 5).isActive = true
-        authorLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
-        authorLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        addSubview(sourceLabel)
+        sourceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
+        sourceLabel.leftAnchor.constraint(equalTo: newsImageView.rightAnchor, constant: 5).isActive = true
+        sourceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
+        sourceLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
         
         addSubview(dateLabel)
-        dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: sourceLabel.bottomAnchor).isActive = true
         dateLabel.leftAnchor.constraint(equalTo: newsImageView.rightAnchor, constant: 5).isActive = true
         dateLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
-        dateLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        dateLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
     }
     
     
