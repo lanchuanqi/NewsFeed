@@ -67,6 +67,7 @@ class NewsCell: UITableViewCell {
         setUpUI()
     }
     
+    
     private func setUpUI(){
         backgroundColor = UIColor.cellBackgroundColor
         
